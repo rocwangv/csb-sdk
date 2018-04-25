@@ -154,7 +154,7 @@ class Client extends Base {
             timeout: opts.timeout
         }).then((response) => {
             entry.request = {
-            headers: response.req._headers
+            headers: response.req ? response.req._headers : JSON.stringify(headers)
             };
             entry.response = {
             statusCode: response.statusCode,
